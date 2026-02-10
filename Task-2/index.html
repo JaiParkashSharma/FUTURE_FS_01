@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini CRM</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; padding:20px; }
+    input, select, button { padding:8px; margin:5px; }
+    table { width:100%; background:white; margin-top:20px; }
+    th, td { padding:10px; border:1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+<h2>Client Lead Management System</h2>
+
+<input id="name" placeholder="Client Name">
+<input id="email" placeholder="Email">
+<input id="source" placeholder="Source">
+<select id="status">
+  <option>New</option>
+  <option>Contacted</option>
+  <option>Converted</option>
+</select>
+<button onclick="addLead()">Add Lead</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Source</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="leadTable"></tbody>
+</table>
+
+<script>
+function addLead() {
+  let table = document.getElementById("leadTable");
+  let row = table.insertRow();
+  row.insertCell(0).innerText = name.value;
+  row.insertCell(1).innerText = email.value;
+  row.insertCell(2).innerText = source.value;
+  row.insertCell(3).innerText = status.value;
+
+  name.value = email.value = source.value = "";
+}
+</script>
+
+</body>
+</html>
